@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+     <!-- Gustavo Pereira Rocha SP3216543-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequência é um portal independente sobre música, cultura e tecnologia.">
+    <title>Iread News</title>
+
+    <!-- As duas fontes são usadas para criar contraste entre títulos e textos de interface. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para textos</a>
+
+    <header class="topo">
+        <div class="topo__barra">
+            <p id="relogio" aria-live="polite">Carregando horário...</p>
+
+            <button class="botao-tema" id="botaoTema" type="button" aria-label="Ativar tema escuro">
+                <span aria-hidden="true">☾</span>
+                <span>Tema</span>
+            </button>
+        </div>
+
+        <div class="masthead">
+            <a class="logo" href="#" aria-label="Moulin Rouge Beaux">Iread News<span>.</span></a>
+
+            <nav class="navegacao" aria-label="Navegação principal">
+                <a href="#ultimas">Música</a>
+                <a href="#ultimas">Cultura</a>
+                <a href="#ultimas">Tecnologia</a>
+                <a href="#newsletter">Agenda</a>
+            </nav>
+
+            <form class="busca" id="formBusca" role="search">
+                <label class="sr-only" for="campoBusca">Buscar notícias</label>
+                <span aria-hidden="true">⌕</span>
+                <input id="campoBusca" type="search" placeholder="Buscar notícias..." autocomplete="off">
+            </form>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <section class="hero" aria-labelledby="tituloDestaque">
+            <article class="hero__principal">
+                <div class="imagem imagem--destaque">
+                    <img src="imagens/destaque.svg" alt="Ilustração abstrata em tons roxos para a matéria principal">
+                </div>
+
+                <div class="etiqueta etiqueta--musica">Música</div>
+                <h1 id="tituloDestaque">Fique por dentro das notícias mais recentes e dos assuntos que movimentam o planeta pagando uma assinatura ou pagando pelos textos do seu interesse</h1>
+                <p class="subtitulo">Novos hábitos de leituta mudaram o repertório dos nossos leitores, venha vocẽ também fazer parte do nosso time.</p>
+                <h2 class="meta">Por Apenas R$19,90 por mês  · saiba mais descendo a tela · last update 5 out 2026 </h2>
+            </article>
+
+            <aside class="destaques-laterais" aria-label="Outras notícias em destaque">
+                <article class="mini-destaque">
+                    <span class="numero">01</span>
+                    <div>
+                        <span class="mini-categoria">Cultura</span>
+                        <h2>Clubes independentes encontram novos caminhos para manter a cena local</h2>
+                        <p>4 out · 14 min</p>
+                    </div>
+                </article>
+
+                <article class="mini-destaque">
+                    <span class="numero">02</span>
+                    <div>
+                        <span class="mini-categoria">Tecnologia</span>
+                        <h2>Aplicativos de áudio começam a apostar em experiências mais personalizadas</h2>
+                        <p>3 out · 15 min</p>
+                    </div>
+                </article>
+
+                <article class="mini-destaque">
+                    <span class="numero">03</span>
+                    <div>
+                        <span class="mini-categoria">Agenda</span>
+                        <h2>Sete festivais gratuitos para colocar na programação de outubro</h2>
+                        <p>2 out · 3 min</p>
+                    </div>
+                </article>
+            </aside> 
+
+        </section>
+
+        <section class="ultimas" id="ultimas" aria-labelledby="tituloUltimas">
+            <div class="secao-cabecalho">
+                <h2 id="tituloUltimas">Últimas</h2>
+                <div class="filtros" aria-label="Filtrar notícias por categoria">
+                    <button class="filtro ativo" data-categoria="Todas" type="button">Todas</button>
+                    <button class="filtro" data-categoria="Música" type="button">Música</button>
+                    <button class="filtro" data-categoria="Cultura" type="button">Cultura</button>
+                    <button class="filtro" data-categoria="Tecnologia" type="button">Tecnologia</button>
+                    <button class="filtro" data-categoria="Agenda" type="button">Agenda</button>
+                </div>
+            </div>
+
+            <p class="resultado-busca" id="resultadoBusca" aria-live="polite"></p>
+            <div class="grade-noticias" id="gradeNoticias"></div>
+
+            <button class="botao-carregar" id="botaoCarregar" type="button">Carregar mais</button>
+        </section>
+
+        <section class="newsletter" id="newsletter" aria-labelledby="tituloNewsletter">
+            <div>
+                <p class="newsletter__label">Frequência por e-mail</p>
+                <h2 id="tituloNewsletter">Uma seleção do que vale a pena ouvir, ler e conhecer com uma assinatura mensal de R$19,90, se inscreva por email.</h2>
+                <p>Receba um resumo semanal das principais histórias. Sem excesso de notificações.</p>
+            </div>
+
+            <form id="formNewsletter" class="form-newsletter" novalidate>
+                <label class="sr-only" for="email">Seu e-mail</label>
+                <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+                <button type="submit">Assinar</button>
+                <p id="mensagemNewsletter" class="mensagem" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>© 2026 Frequência · Prova 05/10/2026</p>
+        <nav aria-label="Links institucionais">
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+        </nav>
+    </footer>
+</body>
+</html>
